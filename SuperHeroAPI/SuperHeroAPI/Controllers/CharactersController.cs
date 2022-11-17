@@ -99,6 +99,7 @@ namespace SuperHeroAPI.Controllers
             {
                 if (CharacterExists(character.Id))
                 {
+                    Console.WriteLine("Added Character Id is " +character.Id);
                     return Conflict();
                 }
                 else

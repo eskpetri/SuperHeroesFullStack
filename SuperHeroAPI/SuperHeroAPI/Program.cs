@@ -1,9 +1,19 @@
+using DateTimeAPI.Converters;
 using Microsoft.EntityFrameworkCore;
 using SuperHeroAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+//Date and Time Converter Needs Converters sub directory classes and namaspace DateTimeAPI.Converters
+builder.Services.AddControllers().AddJsonOptions(
+    options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new DateOnlyJsonConverter());
+        options.JsonSerializerOptions.Converters.Add(new TimeOnlyJsonConverter());
+    }
+);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

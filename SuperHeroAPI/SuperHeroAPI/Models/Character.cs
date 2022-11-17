@@ -17,5 +17,5 @@ public partial class Character
 
     public string? Place { get; set; }
 
-    public DateTime? Birthdate { get; set; }
+    public DateOnly? Birthdate { get; set; }
 }

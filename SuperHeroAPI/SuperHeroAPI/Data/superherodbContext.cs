@@ -2,6 +2,7 @@
 #nullable enable
 using System;
 using System.Collections.Generic;
+using DateTimeAPI.Converters;
 using Microsoft.EntityFrameworkCore;
 using SuperHeroAPI.Models;
 
@@ -10,6 +11,20 @@ namespace SuperHeroAPI.Data;
 public partial class superherodbContext : DbContext
 {
     public superherodbContext(DbContextOptions<superherodbContext> options) : base(options)    {    }
+
+    //.NET7 EF7 don't have yet data and time converters
+    protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+    {
+        base.ConfigureConventions(configurationBuilder);
+
+        configurationBuilder.Properties<DateOnly>()
+                            .HaveConversion<DateOnlyEFConverter>()
+                            .HaveColumnType("date");
+
+        configurationBuilder.Properties<TimeOnly>()
+                  .HaveConversion<TimeOnlyEFConverter>()
+                  .HaveColumnType("time");
+    }
 
     public virtual DbSet<Character> Character { get; set; }
 
