@@ -32,12 +32,13 @@ public partial class superherodbContext : DbContext
     {
         modelBuilder.Entity<Character>(entity =>
         {
-            entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.Birthdate).HasColumnType("date");
+            //entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();       //Autoincrement in database
             entity.Property(e => e.Firstname).HasMaxLength(50);
             entity.Property(e => e.Lastname).HasMaxLength(50);
             entity.Property(e => e.Name).HasMaxLength(50);
             entity.Property(e => e.Place).HasMaxLength(50);
+            entity.Property(e => e.Birthdate).HasColumnType("date");
         });
 
         OnModelCreatingPartial(modelBuilder);

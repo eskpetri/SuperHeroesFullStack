@@ -2,11 +2,14 @@
 #nullable enable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SuperHeroAPI.Models;
 
 public partial class Character
 {
+   // [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
     public string? Name { get; set; }
