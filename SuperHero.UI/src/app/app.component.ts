@@ -39,16 +39,16 @@ export class AppComponent {
   editHero(hero: SuperHero) {
     this.heroToEdit = hero;
   }
-  updateCharacterList(heroes: SuperHero[]) {
-    this.heroes = heroes;
+  updateCharacterList(characters: Character[]) {
+    this.characters = characters;
   }
 
   initNewCharacter() {
-    this.heroToEdit = new SuperHero();
+    this.characterToEdit = new Character();
   }
 
-  editCharacter(hero: SuperHero) {
-    this.heroToEdit = hero;
+  editCharacter(character: Character) {
+    this.characterToEdit = character;
   }
 
 }
