@@ -8,11 +8,12 @@ import { Character } from '../models/character';
   providedIn: 'root',
 })
 export class CharacterService {
-  private url = 'Character';
+  private url = 'Characters';
 
   constructor(private http: HttpClient) {}
 
   public getCharacters(): Observable<Character[]> {
+    console.log(this.http.get<Character[]>(`${environment.apiUrl}/${this.url}`));
     return this.http.get<Character[]>(`${environment.apiUrl}/${this.url}`);
   }
 
