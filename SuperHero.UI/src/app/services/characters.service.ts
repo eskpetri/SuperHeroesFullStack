@@ -8,7 +8,7 @@ import { Character } from '../models/character';
   providedIn: 'root',
 })
 export class CharacterService {
-  private url = 'Character';
+  private url = 'Characters';
 
   constructor(private http: HttpClient) {}
 
