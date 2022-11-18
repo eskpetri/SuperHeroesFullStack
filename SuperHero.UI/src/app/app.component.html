@@ -1,25 +1,57 @@
-<button (click)="initNewHero()">Create New Hero</button>
+<div class="flex-container">
+  <div class="flex-child magenta">
+  <button (click)="initNewHero()">Create New Hero</button>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Place</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hero of heroes">
+        <td>{{ hero.name }}</td>
+        <td>{{ hero.firstName }}</td>
+        <td>{{ hero.lastName }}</td>
+        <td>{{ hero.place }}</td>
+        <td><button (click)="editHero(hero)">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <app-edit-hero
+    [hero]="heroToEdit"
+    (heroesUpdated)="updateHeroList($event)"
+  ></app-edit-hero>
+  </div>
 
-<table>
-  <thead>
-    <th>Name</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Place</th>
-    <th></th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let hero of heroes">
-      <td>{{ hero.name }}</td>
-      <td>{{ hero.firstName }}</td>
-      <td>{{ hero.lastName }}</td>
-      <td>{{ hero.place }}</td>
-      <td><button (click)="editHero(hero)">Edit</button></td>
-    </tr>
-  </tbody>
-</table>
+  <div class="flex-child green">
+    <button (click)="initNewCharacter()">Create New Character</button>
 
-<app-edit-hero
-  [hero]="heroToEdit"
-  (heroesUpdated)="updateHeroList($event)"
-></app-edit-hero>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Place</th>
+        <th>Birthdate</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let character of characters">
+          <td>{{ character.name }}</td>
+          <td>{{ character.firstName }}</td>
+          <td>{{ character.lastName }}</td>
+          <td>{{ character.place }}</td>
+          <td>{{ character.birthdate }}</td>
+          <td><button (click)="editCharacter(character)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- <app-character
+      [character]="characterToEdit"
+      (characterUpdated)="updateCharacterList($event)"
+    ></app-character> -->
+    </div>
+</div>
