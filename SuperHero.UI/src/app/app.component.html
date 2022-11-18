@@ -51,7 +51,7 @@
 
     <app-character
       [character]="characterToEdit"
-      (characterUpdated)="updateCharacterList($events)">
+      (characterUpdated)="updateCharacterList($any($event))">
     </app-character>
     </div>
 </div>
