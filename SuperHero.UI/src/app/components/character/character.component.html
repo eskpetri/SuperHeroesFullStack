@@ -16,6 +16,10 @@
       Place:
       <input [(ngModel)]="character.place" placeholder="Place" />
     </div>
+    <div>
+        Brithdate:
+        <input type:date [(ngModel)]="character.birthdate" placeholder="Date of birth" />
+      </div>
     <button (click)="updateCharacter(character)" *ngIf="character.id">Save</button>
     <button (click)="deleteCharacter(character)" *ngIf="character.id">Delete</button>
     <button (click)="createCharacter(character)" *ngIf="!character.id">Create</button>
