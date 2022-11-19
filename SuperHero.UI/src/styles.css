@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+
+.btn-add {
+    color : rgb(49, 46, 46);
+    background-color: rgba(55, 255, 5, 0.96);
+    border-radius: 10px 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .btn-add:not([disabled]):hover {
+    background-color: rgba(0, 42, 252, 0.96);
+    color: rgb(34, 253, 0);
+  }
+  
+  .btn-add[disabled] {
+    color : rgb(187, 187, 187);
+    background-color: rgba(230, 230, 229, 0.96);
+  }
+  .btn-delete {
+    color : rgb(49, 46, 46);
+    background-color: rgba(252, 4, 4, 0.96);
+    border-radius: 0 10px 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .btn-delete:not([disabled]):hover {
+    background-color: rgba(235, 252, 0, 0.96);
+    color: rgb(255, 0, 0);
+  }
+  
+  .btn-delete[disabled] {
+    color : rgb(187, 187, 187);
+    background-color: rgba(230, 230, 229, 0.96);
+  }
+  .btn-edit {
+    color : rgb(1, 1, 1);
+    background-color: rgba(255, 238, 5, 0.96);
+    border-radius: 5px 5px 5px 5px;
+    font-size: 14px;
+    font-weight: 550;
+  }
+  
+  .btn-edit:not([disabled]):hover {
+    background-color: rgba(0, 42, 252, 0.96);
+    color: rgb(34, 253, 0);
+  }
+  
+  .btn-edit[disabled] {
+    color : rgb(187, 187, 187);
+    background-color: rgba(230, 230, 229, 0.96);
+  }
+  .theader, .th {
+    border: aqua;
+    border: 2px solid;
+    border-radius: 5px 5px 5px 5px;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+label{
+    display: inline-block;
+    /* float: left; */
+    clear: left;
+    width: 80px;
+    text-align: right;
+}
+.input {
+  display: inline-block;
+  /* float: left; */
+}
+  /* th {
+    border: aqua;
+    border: 2px solid;
+  } */
