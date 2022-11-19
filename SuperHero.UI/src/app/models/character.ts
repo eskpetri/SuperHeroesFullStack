@@ -1,8 +1,8 @@
 export class Character {
     id?: number;
     name?: string = "";
-    firstName?: string = "";
-    lastName?: string = "";
+    firstname?: string = "";
+    lastname?: string = "";
     place?: string = "";
     birthdate?: Date;
 }

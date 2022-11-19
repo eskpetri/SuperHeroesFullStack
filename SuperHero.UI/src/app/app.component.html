@@ -21,30 +21,30 @@
   </table>
   <app-edit-hero
     [hero]="heroToEdit"
-    (heroesUpdated)="updateHeroList($event)">
+    (heroesUpdated)="updateHeroList($any($event))">
   </app-edit-hero>
   </div>
 
   <div class="flex-child green">
-    <button (click)="initNewCharacter()">Create New Character</button>
+    <button class="btn-add" (click)="initNewCharacter()">Create New Character</button>
 
-    <table>
+    <table class="theader">
       <thead>
-        <th>Name</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Place</th>
-        <th>Birthdate</th>
-        <th></th>
+        <th class="th">Name</th>
+        <th class="th">First Name</th>
+        <th class="th">Last Name</th>
+        <th class="th">Place</th>
+        <th class="th">Birthdate</th>
+        <th></th><!--Reserved for button-->
       </thead>
       <tbody>
         <tr *ngFor="let character of characters">
           <td>{{ character.name }}</td>
-          <td>{{ character.firstName }}</td>
-          <td>{{ character.lastName }}</td>
+          <td>{{ character.firstname }}</td>
+          <td>{{ character.lastname }}</td>
           <td>{{ character.place }}</td>
           <td>{{ character.birthdate }}</td>
-          <td><button (click)="editCharacter(character)">Edit</button></td>
+          <td><button class="btn-edit" (click)="editCharacter(character)">Edit</button></td>
         </tr>
       </tbody>
     </table>

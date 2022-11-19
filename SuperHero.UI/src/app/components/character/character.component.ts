@@ -7,7 +7,7 @@ import { CharacterService } from 'src/app/services/characters.service';
   templateUrl: './character.component.html',
   styleUrls: ['./character.component.css']
 })
-export class EditcharacterComponent implements OnInit {
+export class EditCharacterComponent implements OnInit {
   @Input() character?: Character;
   @Output() charactersUpdated = new EventEmitter<Character[]>();
 

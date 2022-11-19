@@ -1,26 +1,26 @@
 <div *ngIf="character">
     <h2>{{ character.name }}</h2>
     <div>
-      Name:
-      <input [(ngModel)]="character.name" placeholder="Name" />
+      <label>Name:</label>
+      <input class="input" [(ngModel)]="character.name" placeholder="Name" />
     </div>
     <div>
-      First Name:
-      <input [(ngModel)]="character.firstName" placeholder="First Name" />
+      <label>First Name:</label>
+      <input class="input" [(ngModel)]="character.firstname" placeholder="First Name" />
     </div>
     <div>
-      Last Name:
-      <input [(ngModel)]="character.lastName" placeholder="Last Name" />
+      <label>Last Name:</label>
+      <input class="input" [(ngModel)]="character.lastname" placeholder="Last Name" />
     </div>
     <div>
-      Place:
-      <input [(ngModel)]="character.place" placeholder="Place" />
+      <label>Place:</label>
+      <input class="input" [(ngModel)]="character.place" placeholder="Place" />
     </div>
     <div>
-        Brithdate:
-        <input type:date [(ngModel)]="character.birthdate" placeholder="Date of birth" />
+      <label>Brithdate:</label>
+        <input class="input" type:date [(ngModel)]="character.birthdate" placeholder="Date of birth" />
       </div>
-    <button (click)="updateCharacter(character)" *ngIf="character.id">Save</button>
-    <button (click)="deleteCharacter(character)" *ngIf="character.id">Delete</button>
-    <button (click)="createCharacter(character)" *ngIf="!character.id">Create</button>
+    <button class="btn-add" (click)="updateCharacter(character)" *ngIf="character.id">Save</button>
+    <button class="btn-delete" (click)="deleteCharacter(character)" *ngIf="character.id">Delete</button>
+    <button class="btn-add" (click)="createCharacter(character)" *ngIf="!character.id">Create</button>
   </div> 
