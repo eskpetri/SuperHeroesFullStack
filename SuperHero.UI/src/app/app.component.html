@@ -21,8 +21,8 @@
   </table>
   <app-edit-hero
     [hero]="heroToEdit"
-    (heroesUpdated)="updateHeroList($event)"
-  ></app-edit-hero>
+    (heroesUpdated)="updateHeroList($event)">
+  </app-edit-hero>
   </div>
 
   <div class="flex-child green">
@@ -49,9 +49,9 @@
       </tbody>
     </table>
 
-    <!-- <app-character
+    <app-character
       [character]="characterToEdit"
-      (characterUpdated)="updateCharacterList($event)"
-    ></app-character> -->
+      (characterUpdated)="updateCharacterList($any($event))">
+    </app-character>
     </div>
 </div>
