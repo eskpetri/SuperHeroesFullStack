@@ -18,19 +18,19 @@ export class EditCharacterComponent implements OnInit {
   updateCharacter(character: Character) {
     this.CharacterService
       .updateCharacter(character)
-      .subscribe((characteres: Character[]) => this.charactersUpdated.emit(characteres));
+      .subscribe((characters: Character[]) => this.charactersUpdated.emit(characters));
   }
 
   deleteCharacter(character: Character) {
     this.CharacterService
       .deleteCharacter(character)
-      .subscribe((characteres: Character[]) => this.charactersUpdated.emit(characteres));
+      .subscribe((characters: Character[]) => this.charactersUpdated.emit(characters));
   }
 
   createCharacter(character: Character) {
     this.CharacterService
       .createCharacter(character)
-      .subscribe((characteres: Character[]) => this.charactersUpdated.emit(characteres));
+      .subscribe((characters: Character[]) => this.charactersUpdated.emit(characters));    
   }
 }
 

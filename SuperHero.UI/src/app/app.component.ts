@@ -30,6 +30,8 @@ export class AppComponent {
 
   updateHeroList(heroes: SuperHero[]) {
     this.heroes = heroes;
+    console.log('Updated HeroList')
+    console.log('Heroes'+heroes[0].id)
   }
 
   initNewHero() {
@@ -41,6 +43,8 @@ export class AppComponent {
   }
   updateCharacterList(characters: Character[]) {
     this.characters = characters;
+    console.log('Updated CharacterList')
+    console.log('Character'+characters[0].id+' this.:'+this.characters[0].name)
   }
 
   initNewCharacter() {
