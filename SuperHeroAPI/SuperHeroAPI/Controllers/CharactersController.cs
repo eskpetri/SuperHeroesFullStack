@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SuperHeroAPI.Data;
@@ -29,7 +30,7 @@ namespace SuperHeroAPI.Controllers
           {
               return NotFound();
           }
-            return await _context.Character.ToListAsync();
+            return Ok(await _context.Character.ToListAsync());
         }
 
         // GET: api/Characters/5
@@ -53,7 +54,7 @@ namespace SuperHeroAPI.Controllers
         // PUT: api/Characters/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCharacter(int id, Character character)
+        public async Task<ActionResult<IEnumerable<Character>>> PutCharacter(int id, Character character)
         {
             if (id != character.Id)
             {
@@ -78,13 +79,13 @@ namespace SuperHeroAPI.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(await _context.Character.ToListAsync());
         }
 
         // POST: api/Characters
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Character>> PostCharacter(Character character)
+        public async Task<ActionResult<IEnumerable<Character>>> PostCharacter(Character character)
         {
           if (_context.Character == null)
           {
@@ -108,12 +109,12 @@ namespace SuperHeroAPI.Controllers
                 }
             }
 
-            return CreatedAtAction("GetCharacter", new { id = character.Id }, character);
+            return Ok(await _context.Character.ToListAsync());                     //CreatedAtAction("GetCharacter", new { id = character.Id }, character);
         }
 
         // DELETE: api/Characters/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCharacter(int id)
+        public async Task<ActionResult<IEnumerable<Character>>> DeleteCharacter(int id)     //Task<ActionResult<IEnumerable<Character>>> GetCharacter()
         {
             if (_context.Character == null)
             {
@@ -128,7 +129,7 @@ namespace SuperHeroAPI.Controllers
             _context.Character.Remove(character);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok(await _context.Character.ToListAsync());      //return NoContent();
         }
 
         private bool CharacterExists(int id)
