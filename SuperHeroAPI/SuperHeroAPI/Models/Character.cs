@@ -23,4 +23,5 @@ public partial class Character
     public DateOnly? Birthdate { get; set; }
 
     public TimeOnly? Wakeuptime { get; set; }
+    public bool? IsHero { get; set; }
 }
