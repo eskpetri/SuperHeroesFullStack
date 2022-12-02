@@ -19,7 +19,12 @@
     <div>
       <label>Birthdate:</label>
         <input class="input" type:date [(ngModel)]="character.birthdate" placeholder="Date of birth" />
-      </div>
+    </div>
+    <div>
+      <label>Wakeuptime:</label>
+        <input class="input" type:date [(ngModel)]="character.wakeuptime" placeholder="Time to wakeup" />
+    </div>
+
     <button class="btn-add" (click)="updateCharacter(character)" *ngIf="character.id">Save</button>
     <button class="btn-delete" (click)="deleteCharacter(character)" *ngIf="character.id">Delete</button>
     <button class="btn-add" (click)="createCharacter(character)" *ngIf="!character.id">Create</button>

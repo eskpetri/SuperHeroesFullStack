@@ -21,4 +21,6 @@ public partial class Character
     public string? Place { get; set; }
 
     public DateOnly? Birthdate { get; set; }
+
+    public TimeOnly? Wakeuptime { get; set; }
 }
