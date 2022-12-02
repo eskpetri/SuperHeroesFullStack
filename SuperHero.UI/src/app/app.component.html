@@ -36,6 +36,7 @@
         <th class="th">Place</th>
         <th class="th">Birthdate</th>
         <th class="th">Wakeuptime</th>
+        <th class="th">IsHero</th>
         <th></th><!--Reserved for button-->
       </thead>
       <tbody>
@@ -46,6 +47,7 @@
           <td>{{ character.place }}</td>
           <td>{{ character.birthdate }}</td>
           <td>{{ character.wakeuptime }}</td>
+          <td>{{ character.isHero }}</td>
           <td><button class="btn-edit" (click)="editCharacter(character)">Edit</button></td>
         </tr>
       </tbody>

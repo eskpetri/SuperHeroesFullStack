@@ -40,6 +40,10 @@ public partial class superherodbContext : DbContext
             entity.Property(e => e.Place).HasMaxLength(50);
             entity.Property(e => e.Birthdate).HasColumnType("date");
             entity.Property(e => e.Wakeuptime).HasColumnType("time").HasPrecision(0);
+            entity.Property(e => e.IsHero)
+                            .HasDefaultValueSql("((1))")
+                            .HasColumnType("boolean")
+                            .HasColumnName("isHero");
         });
 
         OnModelCreatingPartial(modelBuilder);

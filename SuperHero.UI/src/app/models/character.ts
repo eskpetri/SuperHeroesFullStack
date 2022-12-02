@@ -8,4 +8,5 @@ export class Character {
     place?: string = "";
     birthdate?: Date;
     wakeuptime?: Time;
+    isHero?: boolean;
 }
