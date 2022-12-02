@@ -12,7 +12,7 @@ public partial class superherodbContext : DbContext
 {
     public superherodbContext(DbContextOptions<superherodbContext> options) : base(options)    {    }
 
-    //.NET7 EF7 don't have yet data and time converters
+    //.NET7 EF7 don't have yet date and time converters
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
     {
         base.ConfigureConventions(configurationBuilder);
@@ -39,6 +39,7 @@ public partial class superherodbContext : DbContext
             entity.Property(e => e.Name).HasMaxLength(50);
             entity.Property(e => e.Place).HasMaxLength(50);
             entity.Property(e => e.Birthdate).HasColumnType("date");
+            entity.Property(e => e.Wakeuptime).HasColumnType("time").HasPrecision(0);
         });
 
         OnModelCreatingPartial(modelBuilder);

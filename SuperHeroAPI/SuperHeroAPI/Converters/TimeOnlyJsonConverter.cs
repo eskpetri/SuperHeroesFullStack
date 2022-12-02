@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Globalization;
 
 namespace DateTimeAPI.Converters
 {
@@ -14,7 +15,8 @@ namespace DateTimeAPI.Converters
 
         public override void Write(Utf8JsonWriter writer, TimeOnly value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(value.ToString("HH:mm:ss.fff"));
+            //writer.WriteStringValue(value.ToString("HH:mm:ss.fff"));
+            writer.WriteStringValue(value.ToString("hh:mm:ss", CultureInfo.CreateSpecificCulture("fi")));
         }
     }
 }

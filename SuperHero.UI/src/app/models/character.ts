@@ -1,3 +1,5 @@
+import { Time } from "@angular/common";
+
 export class Character {
     id?: number;
     name?: string = "";
@@ -5,4 +7,5 @@ export class Character {
     lastname?: string = "";
     place?: string = "";
     birthdate?: Date;
+    wakeuptime?: Time;
 }
