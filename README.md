@@ -7,7 +7,7 @@ Suomeksi blogi ja aiheeseen liittyviä linkkejä. https://angularalkeet.blogspot
 
 ## What to do
 
-Side by side increace DB fields from Date to every field available. DB First approuch. Make a system to keep previous DBcontext alive and working while intdrodusing new fields. Learn UI what it comes to inputs. Little bit CSS on the go. Just checking how Code First can be moved to DB First and making DB larger than original. Bring data to FrontEnd and use according fields in HTML to make correct inputs possible and incorrect impossible along the way. Brake to Azure. 
+Side by side increace DB fields from Date to every field available. DB First approuch. Make a system to keep previous DBcontext alive and working while intdrodusing new fields. Learn UI what it comes to inputs. Little bit CSS on the go. Just checking how Code First can be moved to DB First and making DB larger than original. Bring data to FrontEnd and use according fields in HTML to make correct inputs possible and incorrect impossible along the way. To the FrontEnd longer project.
 
 ## Occurred problems and solutions 
 After updating BackEnd to .NET7 and all pacgakes to newest ones. Error arised while making get all query in Swagger: "Microsoft.Data.SqlClient.SqlException (0x80131904): 
